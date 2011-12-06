@@ -1,0 +1,13 @@
+This account has been created at http://yates.mykansaslibrary.org.
+
+You can log in at http://yates.mykansaslibrary.org/wp-admin with the following credentials :
+
+username: librarian
+password: xxxxxxx
+
+For the latest KLOW developments please visit http://www.mykansaslibrary.org or add http://www.mykansaslibrary.org/feed/  to your RSS reader.
+
+Have fun with your new site!
+
+Liz Rea
+KLOW Administrator
