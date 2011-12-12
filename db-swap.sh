@@ -15,7 +15,7 @@ do
       m)  mode="$OPTARG";;
       \?)		# unknown flag
       	  echo >&2 \
-	  "usage: $0 [-v] [-f filename] [file ...]"
+	  "usage: $0 [-v] [-m o || t] o is original config, t is testing config."
 	  exit 1;;
     esac
 done
