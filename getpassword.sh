@@ -1,3 +1,4 @@
+ls /etc/koha/sites
 echo "Which site?"
 read site
 
