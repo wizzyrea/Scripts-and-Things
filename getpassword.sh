@@ -1,5 +1,4 @@
-gpg -d ~/password.txt.gpg
-ls /etc/koha/sites
+sudo koha-list --enabled
 echo "Which site?"
 read site
 
