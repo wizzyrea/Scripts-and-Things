@@ -1,10 +1,12 @@
 #! /bin/bash
 #---------------------------------
 # Copyright 2010 ByWater Solutions
+# Copyright 2015 Catalyst IT
+# Copyright 2015 Liz Rea (wizzyrea@gmail.com)
 #---------------------------------
 #
-# This script will drop all tables from a MySQL database.  If you give it
-# proper credentials, it will do it with no further prompting.
+# This script will drop all tables from a Koha MySQL database. 
+# Running this script without --confirm will ask for confirmation from stdin.
 #
 # USE WITH EXTREME CAUTION!
 #
