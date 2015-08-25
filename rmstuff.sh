@@ -15,6 +15,6 @@ if [ "$OUT" -ge 1 ] ; then
     git reset --hard HEAD
 else
     echo "Woo Hoo! It applies! Running tests"
-    sudo koha-shell rmaint --command "prove t xt"
+    sudo koha-shell rmaint --command "export PERL5LIB=/home/liz/rmaint-3.18/koha ; cd /home/liz/rmaint-3.18/koha ; prove t xt "
     koha-qa.pl -v 1 -c 2
 fi
