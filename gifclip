@@ -1,0 +1,37 @@
+#!/bin/bash
+#Dependencies: sudo apt-get install byzanz xclip osd-notify
+
+# Delay before starting
+DELAY=3
+OUTPUTPATH="$HOME/public_html/gifclips"
+WEBPATH="http://wingardium-leviosa/~liz/gifclips"
+TIME=$(date +"%Y-%m-%d_%H%M%S")
+#Default duration
+DEFDUR=10
+
+# Sound notification to let one know when recording is about to start (and ends)
+beep() {
+    paplay /usr/share/sounds/KDE-Im-Irc-Event.ogg &
+}
+
+USERDUR=$(gdialog --title "Duration?" --inputbox "Please enter the screencast duration in seconds" 200 100 2>&1)
+
+# Duration and output file
+if [ $USERDUR -gt 0 ]; then
+    D=$USERDUR
+else
+    D=$DEFDUR
+fi
+
+# xrectsel from https://github.com/lolilolicon/xrectsel
+# notify-send "GIFRecorder" "Select the area you'd like to capture" -t 2000
+ARGUMENTS=$(xrectsel "--x=%x --y=%y --width=%w --height=%h") || exit -1
+
+notify-send "GIFRecorder" "Recording duration set to $D seconds. Recording will start in $DELAY seconds."
+sleep $DELAY
+beep
+byzanz-record -c --delay=0 ${ARGUMENTS} --duration=$D "$OUTPUTPATH/$TIME.gif"
+beep
+notify-send "GIFRecorder" "Screencast saved to $OUTPUTPATH/$TIME.gif"
+#Send a pastable link to your paste buffer
+echo "$WEBPATH/$TIME.gif" | xclip -selection c

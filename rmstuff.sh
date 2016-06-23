@@ -6,7 +6,8 @@ else
     echo "commit ID?"
     read commitid
 fi
-git cherry-pick -s $commitid
+export KOHA_CONF=/etc/koha/sites/rmaint/koha-conf.xml
+git cherry-pick -s -x $commitid
 
 OUT=$?
 
